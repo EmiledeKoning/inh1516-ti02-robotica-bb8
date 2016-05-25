@@ -6,5 +6,8 @@ public class Robot {
 		// TODO Auto-generated method stub
 
 	}
-
+	
+	public static void Stop() {
+		
+	}
 }
