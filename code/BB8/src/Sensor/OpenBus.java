@@ -26,7 +26,7 @@ public class OpenBus {
 	private static final int CTRL_REG1_G = 0x20;
 	private static final int CTRL_REG4_G = 0x23;
 	private static final int OUT_X_L_G = 0x28;
-	private static final int OUT_X_H_G = 0x29;
+	//private static final int OUT_X_H_G = 0x29;
 	
 	private static byte[] bytes = new byte[6];
 	
@@ -53,7 +53,7 @@ public class OpenBus {
 		{
 			System.err.println(e.getMessage());
 		}
-		String specifiedsensor = "???";
+		//String specifiedsensor = "???";
 		while (true) {
 			int xlg = Gyro.Gyro.read(OUT_X_L_G, bytes, 0, 6);
 			if(xlg < 6) 
@@ -103,7 +103,7 @@ public class OpenBus {
 		if (specifiedsensor == "Gyro")
 		{	//To instantiate/enable the gyro..
 													//0x6A
-			int writetoGyro = I2C.i2cWriteBytes(fd, devAdd, , size, offset, 0b01100111);
+//			int writetoGyro = I2C.i2cWriteBytes(fd, devAdd, , size, offset, 0b01100111);
 			
 			//for less bytes(1), we can use WriteByte... more accessible
 			
@@ -122,7 +122,7 @@ public class OpenBus {
 		
 		if (specifiedsensor == "Accel")
 		{											 	//0xE1
-			int writetoAccel = I2C.i2cWriteBytesDirect(fd, devAdd, size, offset, buff);
+		//	int writetoAccel = I2C.i2cWriteBytesDirect(fd, devAdd, size, offset, buff);
 			//for less bytes(1), we can use WriteByte... more accessible
 		}
 	}
@@ -131,7 +131,7 @@ public class OpenBus {
 	{
 		if (specifiedsensor == "Gyro")
 		{											//0x6A
-			int readfromGyro = I2C.i2cReadBytesDirect(fd, devAdd, size, offset, buff);
+		//	int readfromGyro = I2C.i2cReadBytesDirect(fd, devAdd, size, offset, buff);
 			if (readfromGyro < 0)
 			{
 				System.out.println("Failed to read bytes from Gyro Sensor.");
@@ -140,7 +140,7 @@ public class OpenBus {
 		
 		if (specifiedsensor == "Accel")
 		{											 //0xE1							
-			int readfromAccel = I2C.i2cReadBytesDirect(fd, devAdd, size, offset, buff);
+		//	int readfromAccel = I2C.i2cReadBytesDirect(fd, devAdd, size, offset, buff);
 			if (readfromAccel < 0)
 			{
 				System.out.println("Failed to read bytes from Acceleration Sensor.");
