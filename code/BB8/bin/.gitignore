@@ -1,2 +1,16 @@
 /Sensor/
 /Gyro/
+/Acceleration/
+/Altitude/
+/Body/
+/Communication/
+/DC_Motor/
+/Echo/
+/Head/
+/Magnetometer/
+/Motor/
+/Robot/
+/Stepper_Motor/
+/Temperature/
+/Vector/
+/Accelerometer/

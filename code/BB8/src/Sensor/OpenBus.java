@@ -9,7 +9,6 @@ import com.pi4j.io.i2c.I2CBus;
 import com.pi4j.io.i2c.I2CFactory;
 import com.pi4j.jni.I2C;
 
-import Acceleration.Acceleration;
 import Accelerometer.Accelerometer;
 import Gyro.Gyro;
 import Magnetometer.Magnetometer;
@@ -42,17 +41,17 @@ public class OpenBus {
 	
 	private static byte[] data = new byte[6];
 	
-	public static void main(String[] args) throws IOException{
+	//public static void main(String[] args) throws IOException{
 		//constr
 	/*	OpenBus myFile = new OpenBus();
 		OpenBus specSens = new OpenBus();
 		
-		//open up the i2c bus
+		open up the i2c bus
 		myFile.openFile("/dev/i2c-1");
-		//Specify the sensor to use
-		//Get it from (BB8-)Body*/
-//		myFile.closeFile();
-		
+		Specify the sensor to use
+		Get it from (BB8-)Body
+		myFile.closeFile();*/
+	public static void I2CComms(){
 		try
 		{
 		bus = I2CFactory.getInstance(I2CBus.BUS_1);
