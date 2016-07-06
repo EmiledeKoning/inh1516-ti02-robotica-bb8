@@ -1,6 +1,5 @@
-/Echo/
-/Sensor/
-/Gyro/
-/Magnetometer/
-/Accelerometer/
-/Altitude/
+/DC_Motor/
+/Motor/
+/MotorHat/
+/Stepper_Motor/
+/MotorLibrary/
