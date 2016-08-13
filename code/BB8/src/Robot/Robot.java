@@ -8,6 +8,9 @@ import java.net.UnknownHostException;
 import java.util.Properties;
 
 import Accelerometer.Accelerometer;
+import Adafruit.AdafruitDcMotor;
+import Adafruit.AdafruitMotorHat;
+import Adafruit.AdafruitStepperMotor;
 import Altitude.Altitude;
 import Body.Body;
 import Communication.Communication;
@@ -88,6 +91,19 @@ public class Robot {
 
 	}
 	private static void Init_Body(){
+		/* HAT0 : M1 = DcMotor X-as
+		 * 		: M2 = DcMotor Y-as
+		 * 		: M3/M4 = Stepper Kantelen Hoofd
+		 * HAT1 : M1/M2 = Stepper Draaien Hoofd
+		 * 		: M3/M4 = Stepper Draaien Binnenwerk
+		 */
+		AdafruitMotorHat HAT0 = new Adafruit.AdafruitMotorHat();
+		AdafruitMotorHat HAT1 = new Adafruit.AdafruitMotorHat();
+		
+		AdafruitDcMotor X_Motor = HAT0.getDcMotor("M1");
+		AdafruitDcMotor Y_Motor = HAT0.getDcMotor("M2");
+		AdafruitStepperMotor Kantelen = HAT0.getStepperMotor("SM2");
+		
 	}
 	
 	public static void Shutdown() throws IOException{
